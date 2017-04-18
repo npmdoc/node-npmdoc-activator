@@ -1,0 +1,1131 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/deitch/activator#readme"
+
+    >activator (v3.0.1)</a>
+</h1>
+<h4>simple user activation and password reset for nodejs</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.activator">module activator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.completeActivate">
+            function <span class="apidocSignatureSpan">activator.</span>completeActivate
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.completeActivateNext">
+            function <span class="apidocSignatureSpan">activator.</span>completeActivateNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.completePasswordReset">
+            function <span class="apidocSignatureSpan">activator.</span>completePasswordReset
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.completePasswordResetNext">
+            function <span class="apidocSignatureSpan">activator.</span>completePasswordResetNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.createActivate">
+            function <span class="apidocSignatureSpan">activator.</span>createActivate
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.createActivateNext">
+            function <span class="apidocSignatureSpan">activator.</span>createActivateNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.createPasswordReset">
+            function <span class="apidocSignatureSpan">activator.</span>createPasswordReset
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.createPasswordResetNext">
+            function <span class="apidocSignatureSpan">activator.</span>createPasswordResetNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.init">
+            function <span class="apidocSignatureSpan">activator.</span>init
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>activator</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">activator.</span>mailcomposer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">activator.</span>templates</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.activator.activator">module activator.activator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.completeActivate">
+            function <span class="apidocSignatureSpan">activator.activator.</span>completeActivate
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.completeActivateNext">
+            function <span class="apidocSignatureSpan">activator.activator.</span>completeActivateNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.completePasswordReset">
+            function <span class="apidocSignatureSpan">activator.activator.</span>completePasswordReset
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.completePasswordResetNext">
+            function <span class="apidocSignatureSpan">activator.activator.</span>completePasswordResetNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.createActivate">
+            function <span class="apidocSignatureSpan">activator.activator.</span>createActivate
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.createActivateNext">
+            function <span class="apidocSignatureSpan">activator.activator.</span>createActivateNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.createPasswordReset">
+            function <span class="apidocSignatureSpan">activator.activator.</span>createPasswordReset
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.createPasswordResetNext">
+            function <span class="apidocSignatureSpan">activator.activator.</span>createPasswordResetNext
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.activator.init">
+            function <span class="apidocSignatureSpan">activator.activator.</span>init
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">activator.activator.</span>templates</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.activator.mailcomposer">module activator.mailcomposer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.mailcomposer.compile">
+            function <span class="apidocSignatureSpan">activator.mailcomposer.</span>compile
+            <span class="apidocSignatureSpan">(type, lang, config, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.mailcomposer.get">
+            function <span class="apidocSignatureSpan">activator.mailcomposer.</span>get
+            <span class="apidocSignatureSpan">(type, lang, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.mailcomposer.init">
+            function <span class="apidocSignatureSpan">activator.mailcomposer.</span>init
+            <span class="apidocSignatureSpan">(templatesDriver, styliner)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.activator.templates">module activator.templates</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.activator.templates.file">
+            function <span class="apidocSignatureSpan">activator.templates.</span>file
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.activator" id="apidoc.module.activator">module activator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.activator.completeActivate" id="apidoc.element.activator.completeActivate">
+        function <span class="apidocSignatureSpan">activator.</span>completeActivate
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completeActivate = function (req, res, next) {
+		rparam(req);
+		completeActivate(req,function (code,message) {
+			res.status(code).send(message);
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+When you use activator, the steps are as follows:
+
+1. User creates a new account on your Web site / app
+2. You include `activator.createActivate()` as part of the creation middleware
+3. *activator* takes the user email address from the new user account, a template from the templates directory set on initialization
+, and the URL from initialization, creates a one-time activation key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.<span class="apidocCodeKeywordSpan">completeActivate</span>()` as the express middleware handler for
+the path in the URL
+6. *activator* checks the one-time activation key and other information against the user account, marks the account as activated
+
+
+### Password Reset
+For password reset, the steps are normally as follows:
+
+1. User clicks &#x22;forgot password&#x22; on your Web site / app
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.completeActivateNext" id="apidoc.element.activator.completeActivateNext">
+        function <span class="apidocSignatureSpan">activator.</span>completeActivateNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completeActivateNext = function (req, res, next) {
+		rparam(req);
+		completeActivate(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.completePasswordReset" id="apidoc.element.activator.completePasswordReset">
+        function <span class="apidocSignatureSpan">activator.</span>completePasswordReset
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completePasswordReset = function (req, res, next) {
+		rparam(req);
+		completePasswordReset(req,function (code,message) {
+			res.status(code).send(message);
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+When you use activator, the steps are as follows:
+
+1. User selects &#x22;reset password&#x22; on your Web site / app
+2. You include `activator.createPasswordReset()` as the express middleware handler for the path
+3. *activator* takes the user email address from the user account, a template driver function to get each email template, and the
+ URL from initialization, creates a one-time password reset key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.<span class="apidocCodeKeywordSpan">completePasswordReset</span>()` as the express middleware handler
+ for the path in the URL
+6. *activator* checks the one-time password reset key and other information against the user account, and then allows the user to
+ reset the password
+7. Optionally, activator sends a &#x22;password reset complete&#x22; email.
+
+
+
+### How To Use It
+To use *activator*, you select the routes you wish to use - activator does not impose any special routes - and use activator as
+middleware. Of course, you will need to tell activator how to do several things, like:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.completePasswordResetNext" id="apidoc.element.activator.completePasswordResetNext">
+        function <span class="apidocSignatureSpan">activator.</span>completePasswordResetNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completePasswordResetNext = function (req, res, next) {
+		rparam(req);
+		completePasswordReset(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.createActivate" id="apidoc.element.activator.createActivate">
+        function <span class="apidocSignatureSpan">activator.</span>createActivate
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createActivate = function (req, res, next) {
+		rparam(req);
+		createActivate(req,function (code,message) {
+			if (message === null || message === undefined || (typeof(message) === &#x22;number&#x22; &#x26;&#x26; message === code)) {
+				res.sendStatus(code);
+			} else {
+				res.status(code).send(message);
+			}
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+3. User clicks on the link, thus validating the email address
+
+Most sites call steps 2-3 &#x22;user activation&#x22;. Activator calls step 2 &#x22;create an activation&#x22; and step 3 &#x22;
+complete an activation&#x22;.
+
+When you use activator, the steps are as follows:
+
+1. User creates a new account on your Web site / app
+2. You include `activator.<span class="apidocCodeKeywordSpan">createActivate</span>()` as part of the creation middleware
+3. *activator* takes the user email address from the new user account, a template from the templates directory set on initialization
+, and the URL from initialization, creates a one-time activation key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.completeActivate()` as the express middleware handler for the path in the URL
+6. *activator* checks the one-time activation key and other information against the user account, marks the account as activated
+
+
+### Password Reset
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.createActivateNext" id="apidoc.element.activator.createActivateNext">
+        function <span class="apidocSignatureSpan">activator.</span>createActivateNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createActivateNext = function (req, res, next) {
+		rparam(req);
+		createActivate(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.createPasswordReset" id="apidoc.element.activator.createPasswordReset">
+        function <span class="apidocSignatureSpan">activator.</span>createPasswordReset
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPasswordReset = function (req, res, next) {
+		rparam(req);
+		createPasswordReset(req,function (code,message) {
+			if (message === null || message === undefined || (typeof(message) === &#x22;number&#x22; &#x26;&#x26; message === code)) {
+				res.sendStatus(code);
+			} else {
+				res.status(code).send(message);
+			}
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+3. User clicks on the link, allowing them the opportunity to set a new password
+
+Activator calls step 2 &#x22;create a password reset&#x22; and step 3 &#x22;complete a password reset&#x22;
+
+When you use activator, the steps are as follows:
+
+1. User selects &#x22;reset password&#x22; on your Web site / app
+2. You include `activator.<span class="apidocCodeKeywordSpan">createPasswordReset</span>()` as the express middleware handler for
+ the path
+3. *activator* takes the user email address from the user account, a template driver function to get each email template, and the
+ URL from initialization, creates a one-time password reset key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.completePasswordReset()` as the express middleware handler for the path in the URL
+6. *activator* checks the one-time password reset key and other information against the user account, and then allows the user to
+ reset the password
+7. Optionally, activator sends a &#x22;password reset complete&#x22; email.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.createPasswordResetNext" id="apidoc.element.activator.createPasswordResetNext">
+        function <span class="apidocSignatureSpan">activator.</span>createPasswordResetNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPasswordResetNext = function (req, res, next) {
+		rparam(req);
+		createPasswordReset(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.init" id="apidoc.element.activator.init">
+        function <span class="apidocSignatureSpan">activator.</span>init
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (config) {
+		model = config.user || DEFAULTS.model;
+		transport = config.transport || DEFAULTS.transport;
+		templates = config.templates || function(type,lang,callback){callback(null);};
+		resetExpire = config.resetExpire || DEFAULTS.resetExpire;
+		proto = config.protocol || DEFAULTS.proto;
+		mailer = smtp(transport,templates, config.styliner || DEFAULTS.styliner);
+		attachments = config.attachments || DEFAULTS.attachments;
+		emailProperty = config.emailProperty || DEFAULTS.emailProperty;
+		from = config.from || DEFAULTS.from;
+		idProperty = config.id || DEFAULTS.idProperty;
+		signkey = config.signkey;
+		sendPasswordResetComplete = config.sendPasswordResetComplete || DEFAULTS.sendPasswordResetComplete;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Overview
+activator is the **simple** way to handle user activation and password reset for your nodejs apps!
+
+Example:
+
+    var express = require(&#x27;express&#x27;), app = express(), activator = require(&#x27;activator&#x27;);
+
+		activator.<span class="apidocCodeKeywordSpan">init</span>({user:userModel,transport:smtpURL,from:&#x22;activator@github.com&#x22
+;,templates:mailTemplatesDir});
+
+		app.user(app.router);
+
+		// activate a user
+		app.post(&#x22;/user&#x22;,activator.createActivate);
+		app.put(&#x22;/user/:user/active&#x22;,activator.completeActivate);
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.activator.activator" id="apidoc.module.activator.activator">module activator.activator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.completeActivate" id="apidoc.element.activator.activator.completeActivate">
+        function <span class="apidocSignatureSpan">activator.activator.</span>completeActivate
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completeActivate = function (req, res, next) {
+		rparam(req);
+		completeActivate(req,function (code,message) {
+			res.status(code).send(message);
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+When you use activator, the steps are as follows:
+
+1. User creates a new account on your Web site / app
+2. You include `activator.createActivate()` as part of the creation middleware
+3. *activator* takes the user email address from the new user account, a template from the templates directory set on initialization
+, and the URL from initialization, creates a one-time activation key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.<span class="apidocCodeKeywordSpan">completeActivate</span>()` as the express middleware handler for
+the path in the URL
+6. *activator* checks the one-time activation key and other information against the user account, marks the account as activated
+
+
+### Password Reset
+For password reset, the steps are normally as follows:
+
+1. User clicks &#x22;forgot password&#x22; on your Web site / app
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.completeActivateNext" id="apidoc.element.activator.activator.completeActivateNext">
+        function <span class="apidocSignatureSpan">activator.activator.</span>completeActivateNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completeActivateNext = function (req, res, next) {
+		rparam(req);
+		completeActivate(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.completePasswordReset" id="apidoc.element.activator.activator.completePasswordReset">
+        function <span class="apidocSignatureSpan">activator.activator.</span>completePasswordReset
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completePasswordReset = function (req, res, next) {
+		rparam(req);
+		completePasswordReset(req,function (code,message) {
+			res.status(code).send(message);
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+When you use activator, the steps are as follows:
+
+1. User selects &#x22;reset password&#x22; on your Web site / app
+2. You include `activator.createPasswordReset()` as the express middleware handler for the path
+3. *activator* takes the user email address from the user account, a template driver function to get each email template, and the
+ URL from initialization, creates a one-time password reset key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.<span class="apidocCodeKeywordSpan">completePasswordReset</span>()` as the express middleware handler
+ for the path in the URL
+6. *activator* checks the one-time password reset key and other information against the user account, and then allows the user to
+ reset the password
+7. Optionally, activator sends a &#x22;password reset complete&#x22; email.
+
+
+
+### How To Use It
+To use *activator*, you select the routes you wish to use - activator does not impose any special routes - and use activator as
+middleware. Of course, you will need to tell activator how to do several things, like:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.completePasswordResetNext" id="apidoc.element.activator.activator.completePasswordResetNext">
+        function <span class="apidocSignatureSpan">activator.activator.</span>completePasswordResetNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completePasswordResetNext = function (req, res, next) {
+		rparam(req);
+		completePasswordReset(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.createActivate" id="apidoc.element.activator.activator.createActivate">
+        function <span class="apidocSignatureSpan">activator.activator.</span>createActivate
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createActivate = function (req, res, next) {
+		rparam(req);
+		createActivate(req,function (code,message) {
+			if (message === null || message === undefined || (typeof(message) === &#x22;number&#x22; &#x26;&#x26; message === code)) {
+				res.sendStatus(code);
+			} else {
+				res.status(code).send(message);
+			}
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+3. User clicks on the link, thus validating the email address
+
+Most sites call steps 2-3 &#x22;user activation&#x22;. Activator calls step 2 &#x22;create an activation&#x22; and step 3 &#x22;
+complete an activation&#x22;.
+
+When you use activator, the steps are as follows:
+
+1. User creates a new account on your Web site / app
+2. You include `activator.<span class="apidocCodeKeywordSpan">createActivate</span>()` as part of the creation middleware
+3. *activator* takes the user email address from the new user account, a template from the templates directory set on initialization
+, and the URL from initialization, creates a one-time activation key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.completeActivate()` as the express middleware handler for the path in the URL
+6. *activator* checks the one-time activation key and other information against the user account, marks the account as activated
+
+
+### Password Reset
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.createActivateNext" id="apidoc.element.activator.activator.createActivateNext">
+        function <span class="apidocSignatureSpan">activator.activator.</span>createActivateNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createActivateNext = function (req, res, next) {
+		rparam(req);
+		createActivate(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.createPasswordReset" id="apidoc.element.activator.activator.createPasswordReset">
+        function <span class="apidocSignatureSpan">activator.activator.</span>createPasswordReset
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPasswordReset = function (req, res, next) {
+		rparam(req);
+		createPasswordReset(req,function (code,message) {
+			if (message === null || message === undefined || (typeof(message) === &#x22;number&#x22; &#x26;&#x26; message === code)) {
+				res.sendStatus(code);
+			} else {
+				res.status(code).send(message);
+			}
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+3. User clicks on the link, allowing them the opportunity to set a new password
+
+Activator calls step 2 &#x22;create a password reset&#x22; and step 3 &#x22;complete a password reset&#x22;
+
+When you use activator, the steps are as follows:
+
+1. User selects &#x22;reset password&#x22; on your Web site / app
+2. You include `activator.<span class="apidocCodeKeywordSpan">createPasswordReset</span>()` as the express middleware handler for
+ the path
+3. *activator* takes the user email address from the user account, a template driver function to get each email template, and the
+ URL from initialization, creates a one-time password reset key, composes an email and sends it.
+4. The user receives the email and clicks on the link
+5. You included `activator.completePasswordReset()` as the express middleware handler for the path in the URL
+6. *activator* checks the one-time password reset key and other information against the user account, and then allows the user to
+ reset the password
+7. Optionally, activator sends a &#x22;password reset complete&#x22; email.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.createPasswordResetNext" id="apidoc.element.activator.activator.createPasswordResetNext">
+        function <span class="apidocSignatureSpan">activator.activator.</span>createPasswordResetNext
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPasswordResetNext = function (req, res, next) {
+		rparam(req);
+		createPasswordReset(req,function (code,message) {
+			req.activator = req.activator || {};
+			_.extend(req.activator,{code:code,message:message});
+			next();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.activator.init" id="apidoc.element.activator.activator.init">
+        function <span class="apidocSignatureSpan">activator.activator.</span>init
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (config) {
+		model = config.user || DEFAULTS.model;
+		transport = config.transport || DEFAULTS.transport;
+		templates = config.templates || function(type,lang,callback){callback(null);};
+		resetExpire = config.resetExpire || DEFAULTS.resetExpire;
+		proto = config.protocol || DEFAULTS.proto;
+		mailer = smtp(transport,templates, config.styliner || DEFAULTS.styliner);
+		attachments = config.attachments || DEFAULTS.attachments;
+		emailProperty = config.emailProperty || DEFAULTS.emailProperty;
+		from = config.from || DEFAULTS.from;
+		idProperty = config.id || DEFAULTS.idProperty;
+		signkey = config.signkey;
+		sendPasswordResetComplete = config.sendPasswordResetComplete || DEFAULTS.sendPasswordResetComplete;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Overview
+activator is the **simple** way to handle user activation and password reset for your nodejs apps!
+
+Example:
+
+    var express = require(&#x27;express&#x27;), app = express(), activator = require(&#x27;activator&#x27;);
+
+		activator.<span class="apidocCodeKeywordSpan">init</span>({user:userModel,transport:smtpURL,from:&#x22;activator@github.com&#x22
+;,templates:mailTemplatesDir});
+
+		app.user(app.router);
+
+		// activate a user
+		app.post(&#x22;/user&#x22;,activator.createActivate);
+		app.put(&#x22;/user/:user/active&#x22;,activator.completeActivate);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.activator.mailcomposer" id="apidoc.module.activator.mailcomposer">module activator.mailcomposer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.activator.mailcomposer.compile" id="apidoc.element.activator.mailcomposer.compile">
+        function <span class="apidocSignatureSpan">activator.mailcomposer.</span>compile
+        <span class="apidocSignatureSpan">(type, lang, config, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (type, lang, config, callback) {
+		this.get(type,lang,function (err,res) {
+			let subjectTemplate, textContentTemplate, htmlContentTemplate;
+			if (err) {
+				callback(err);
+			} else if (!res) {
+				callback(null,null);
+			} else {
+				// we have the saved mail template - it might be html or text
+				subjectTemplate = _.template((res.text||res.html).subject);
+				textContentTemplate = res.text ? _.template(res.text.content) : function () {return null;};
+				htmlContentTemplate = res.html ? _.template(res.html.content) : function () {return null;};
+				
+				if(shouldUseStyliner &#x26;&#x26; res.html) {
+					styliner.processHTML(htmlContentTemplate(config)).then(function(processedSource) {
+						callback(subjectTemplate(config), textContentTemplate(config), processedSource);
+					});
+				} else {
+					callback(subjectTemplate(config),textContentTemplate(config),htmlContentTemplate(config));
+				}
+
+			}
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/*jslint node:true, nomen:true */
+
+module.exports = function(url, templates, styliner){
+	var sendmail = require(&#x27;./sendmail&#x27;)(url), mailcomposer = require(&#x27;./mailcomposer&#x27;);
+	mailcomposer.init(templates, styliner);
+	
+	return function(type,lang,data,from,to,attachments,callback) {
+		mailcomposer.<span class="apidocCodeKeywordSpan">compile</span>(type,lang,data,function(subject,text,html){
+			if (subject &#x26;&#x26; (text||html)) {
+				sendmail(from,to,subject,text,html,attachments,callback);
+			} else {
+				callback(&#x22;missingmailtemplate &#x22;+type);
+			}
+		});		
+	};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.mailcomposer.get" id="apidoc.element.activator.mailcomposer.get">
+        function <span class="apidocSignatureSpan">activator.mailcomposer.</span>get
+        <span class="apidocSignatureSpan">(type, lang, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (type, lang, callback) {
+		return templates(type,lang,callback);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		templates = templatesDriver;
+		shouldUseStyliner = styliner || false;
+	},
+	get : function (type,lang,callback) {
+		return templates(type,lang,callback);
+	},
+	compile: function (type,lang,config,callback) {
+		this.<span class="apidocCodeKeywordSpan">get</span>(type,lang,function (err,res) {
+			let subjectTemplate, textContentTemplate, htmlContentTemplate;
+			if (err) {
+				callback(err);
+			} else if (!res) {
+				callback(null,null);
+			} else {
+				// we have the saved mail template - it might be html or text
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.activator.mailcomposer.init" id="apidoc.element.activator.mailcomposer.init">
+        function <span class="apidocSignatureSpan">activator.mailcomposer.</span>init
+        <span class="apidocSignatureSpan">(templatesDriver, styliner)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (templatesDriver, styliner) {
+		templates = templatesDriver;
+		shouldUseStyliner = styliner || false;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Overview
+activator is the **simple** way to handle user activation and password reset for your nodejs apps!
+
+Example:
+
+    var express = require(&#x27;express&#x27;), app = express(), activator = require(&#x27;activator&#x27;);
+
+		activator.<span class="apidocCodeKeywordSpan">init</span>({user:userModel,transport:smtpURL,from:&#x22;activator@github.com&#x22
+;,templates:mailTemplatesDir});
+
+		app.user(app.router);
+
+		// activate a user
+		app.post(&#x22;/user&#x22;,activator.createActivate);
+		app.put(&#x22;/user/:user/active&#x22;,activator.completeActivate);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.activator.templates" id="apidoc.module.activator.templates">module activator.templates</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.activator.templates.file" id="apidoc.element.activator.templates.file">
+        function <span class="apidocSignatureSpan">activator.templates.</span>file
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (p) {
+	var path = p || PATH;
+	
+	return function (type,lang,callback) {
+		// build our list from most specific to least-specific
+		var now = new Date().getTime(), found = false, list = _.reduce(
+				(lang||&#x22;&#x22;).split(&#x27;_&#x27;),
+				function(result,item){
+					result.push(  result.length === 0 ? item : [].concat(result[result.length-1],item).join(&#x22;_&#x22;) );
+					return(result);},
+				[]).reverse();
+		// default case
+		list.push(&#x22;&#x22;);
+		
+		// need to get the mail from filesystem if not cached already
+		// however, we must be careful of the fallback
+		// e.g. we once sent an email with no matching lang, e.g. he_IL, so the default (item=&#x22;&#x22;) was found and cached
+		// now we look for a different lang, e.g. fr_FR. Since we never looked for it, we will not have it in the cache,
+		//   but we *will* have the default (item=&#x22;&#x22;), which would cause us not to look for fr_FR on the filesystem
+		// so it is important that we check not only &#x22;is it in the cache&#x22;, but &#x22;did we ever look for it&#x22;
+		// our logic is:
+		// 1- go from most-specific (fr_FR) to less specific (fr) to default (&#x22;&#x22;)
+		// 2- with each one, if it is cached use it
+		// 3- if it is not cached but also was not found on the filesystem, go to the next
+		// essentially, we need a system to track which ones we searched for and when
+		mails[type] = mails[type] || {};
+		// look for each type in reverse order
+		_.each(list,function (item) {
+			// first, if it is not found at all, then we never searched for it, so go back
+			if (!mails[type][item]) {
+				found = false;
+				return(false);
+			} else if (!mails[type][item].notfound &#x26;&#x26; mails[type][item].expired &#x3e; now) {
+				// so we searched for it. if it was found and is not expired, used it
+				found = mails[type][item];
+				return(false);
+			}
+			// else either it is expired, or it was notfound, so keep looking for the next less-specific down the line
+		});
+		// did we find an answer?
+		if (found) {
+			callback(null,found);
+		} else {
+			fs.readdir(path,function (err,files) {
+				var actuals = [];
+				if (err) {
+					callback(&#x22;missingmailfiles&#x22;);
+				} else {
+					_.each(list,function (item) {
+						var fileName = type+(item?&#x27;_&#x27;+item:&#x27;&#x27;), txtName = fileName + &#x27;.txt&#x27;, htmlName = fileName + &#x27;.html&#x27;;
+						if (_.includes(files,fileName)) {
+							actuals.push({name:item,type:&#x22;text&#x22;,path:path+&#x27;/&#x27;+fileName});
+						} else if (_.includes(files,txtName)) {
+							actuals.push({name:item,type:&#x22;text&#x22;,path:path+&#x27;/&#x27;+txtName});
+						}
+						if (_.includes(files,htmlName)) {
+							actuals.push({name:item,type:&#x22;html&#x22;,path:path+&#x27;/&#x27;+htmlName});
+						}
+					});
+					// actuals now contains the actual file names we have
+					async.each(actuals,
+						function(item,cb) {
+							fs.readFile(item.path,&#x27;utf8&#x27;,function (err,data) {
+								if (data) {
+									data = data.replace(/\r\n/g,&#x27;\n&#x27;);
+									data = data.match(/^([^\n]*)\n[^\n]*\n((.|\n)*)/m);
+									mails[type][item.name] = mails[type][item.name] || {};
+									mails[type][item.name][item.type] = {
+										subject: data[1],
+										content: data[2]
+									};
+									mails[type][item.name].expired = now + EXPIRY*60*1000;
+									cb();
+								} else {
+									mails[type][item.name] = {
+										notfound: true,
+										expired : now + EXPIRY*60*1000
+									};
+									cb();
+								}
+							});
+						},
+						function (err) {
+							// there should be no errors, we should just be complete
+							_.each(list,function (item) {
+								if (mails[type][item] &#x26;&#x26; mails[type][item].expired &#x3e; now) {
+									found = mails[type][item];
+									return(false);
+								}
+							});
+							// did we find an answer?
+							callback(null,found);
+						}
+					);
+				}
+			});
+		}
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+If a precise driver for `en_US` is not found, normally you would return one for `en`, and failing that, a default. However, **it
+ is up to the driver implementation to decide** if that makes sense. One driver might use that fallback, while another might decide
+ that only exact matches to `en_US` are acceptable.
+
+`activator` ships with a default driver to automatically get templates from a filesystem path. To use the default file templates
+ driver, initialize as:
+
+```js
+activator.init({
+    templates: activator.templates.<span class="apidocCodeKeywordSpan">file</span>(pathToTemplates),
+    ...
+})
+```
+
+
+How does `activator` know which language to use when requesting a template? Simple, just set it on `req.lang`. You might have retrieved
+ that from your user preferences, or from your application&#x27;s default, or perhaps from the http header `Accept-Language`. Either
+ way, you should set it in earlier middleware:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
